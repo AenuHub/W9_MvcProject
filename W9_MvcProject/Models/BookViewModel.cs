@@ -3,5 +3,4 @@
 public class BookViewModel
 {
     public Book Book { get; set; }
-    public List<Author> Authors { get; set; }
 }
