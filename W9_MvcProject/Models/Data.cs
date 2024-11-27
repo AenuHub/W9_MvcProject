@@ -4,7 +4,7 @@ public static class Data
 {
     public static List<Author> Authors = new()
     {
-        // author list randomly generated using mockaroo for testing purposes
+        // author list of 50 authors randomly generated using mockaroo for testing purposes
         new Author { Id = 1, FirstName = "Felisha", LastName = "Nester", DateOfBirth = Convert.ToDateTime("2/27/1933") },
         new Author { Id = 2, FirstName = "Margery", LastName = "Kliesl", DateOfBirth = Convert.ToDateTime("9/17/1942") },
         new Author { Id = 3, FirstName = "Caddric", LastName = "Abreheart", DateOfBirth = Convert.ToDateTime("8/24/1907") },
@@ -57,7 +57,7 @@ public static class Data
         new Author { Id = 50, FirstName = "Cello", LastName = "Pitkethly", DateOfBirth = Convert.ToDateTime("6/10/1909") }
     };
     
-    // book list randomly generated using mockaroo for testing purposes
+    // book list of 200 books randomly generated using mockaroo for testing purposes
     public static List<Book> Books = new()
     {
         new Book { Id = 1, Title = "Dancing on Air 14", AuthorId = 3, Genre = "Fiction", PublishDate = Convert.ToDateTime("05/19/2003"), ISBN = "978-275-08-12102-7", CopiesAvailable = 15 },
