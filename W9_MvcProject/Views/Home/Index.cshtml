@@ -28,7 +28,7 @@
                 <tr>
                     <th scope="row">@book.Id</th>
                     <td>@book.Title</td>
-                    <td>@Data.Authors.Where(a => a.Id == book.AuthorId).First().GetFullName()</td>
+                    <td>@Data.Authors.FirstOrDefault(a => a.Id == book.AuthorId).GetFullName()</td>
                     <td>@book.PublishDate.ToShortDateString()</td>
                     <td>@book.Isbn</td>
                     <td>@book.CopiesAvailable</td>
