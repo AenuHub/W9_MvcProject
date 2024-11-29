@@ -16,8 +16,23 @@ public class BookController : Controller
     }
     
     [HttpPost]
-    public IActionResult Add(Book book)
+    public IActionResult Add(AddBookViewModel model)
     {
-        return View();
+        if (ModelState.IsValid)
+        {
+            Data.Books.Add( new Book
+                    {
+                        Id = Data.Books.Count + 1,
+                        Title = model.Title,
+                        AuthorId = model.AuthorId.Value,
+                        Genre = model.Genre,
+                        PublishDate = model.PublishDate.Value,
+                        Isbn = model.Isbn,
+                        CopiesAvailable = model.CopiesAvailable.Value
+                    }
+                );
+        }
+        
+        return View(model);
     }
 }
