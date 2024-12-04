@@ -30,9 +30,9 @@
                             @book.Title
                         </span>
                         <div style="display: flex; gap: 0.5rem; margin-right: 1rem;">
-                            <a class="btn btn-sm btn-primary btn-edit">Edit</a>
-                            <a class="btn btn-sm btn-secondary btn-details">Details</a>
-                            <a class="btn btn-sm btn-danger btn-delete">Delete</a>
+                            <a class="btn btn-sm btn-primary btn-edit" asp-controller="Book" asp-action="Edit" asp-route-id="@book.Id">Edit</a>
+                            <a class="btn btn-sm btn-secondary btn-details" asp-controller="Book" asp-action="Details" asp-route-id="@book.Id">Details</a>
+                            <a class="btn btn-sm btn-danger btn-delete" asp-controller="Book" asp-action="Delete" asp-route-id="@book.Id">Delete</a>
                         </div>
                     </div>
                 </td>
