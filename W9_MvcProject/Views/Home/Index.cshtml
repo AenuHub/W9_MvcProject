@@ -11,15 +11,12 @@
         <a class="btn btn-primary" asp-controller="Book" asp-action="Add">Add new book</a>
     </div>
     
-    <table class="table table-striped table-bordered">
+    <table class="table table-striped table-bordered table-hover text-center align-middle">
         <thead>
         <tr>
             <th scope="col">#</th>
             <th scope="col">Title</th>
             <th scope="col">Author</th>
-            <th scope="col">Publish Date</th>
-            <th scope="col">ISBN</th>
-            <th scope="col">Copies Available</th>
         </tr>
         </thead>
         <tbody>
@@ -27,11 +24,30 @@
             {
                 <tr>
                     <th scope="row">@book.Id</th>
-                    <td>@book.Title</td>
-                    <td>@Data.Authors.FirstOrDefault(a => a.Id == book.AuthorId).GetFullName()</td>
-                    <td>@book.PublishDate.ToShortDateString()</td>
-                    <td>@book.Isbn</td>
-                    <td>@book.CopiesAvailable</td>
+                    <td>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="display: flex; align-items: center; justify-content: center; flex: 1;">
+                                @book.Title
+                            </span>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <a class="btn btn-primary">Edit</a>
+                                <a class="btn btn-primary">Details</a>
+                                <a class="btn btn-danger">Delete</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="display: flex; align-items: center; justify-content: center; flex: 1;">
+                                @Data.Authors.FirstOrDefault(a => a.Id == book.AuthorId).GetFullName()
+                            </span>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <a class="btn btn-primary">Edit</a>
+                                <a class="btn btn-primary">Details</a>
+                                <a class="btn btn-danger">Delete</a>
+                            </div>
+                        </div>
+                    </td>
                 </tr>
             }
         </tbody>
