@@ -82,4 +82,27 @@ public class BookController : Controller
         
         return View();
     }
+    
+    public IActionResult Details(int id)
+    {
+        var book = Data.Books.FirstOrDefault(b => b.Id == id);
+        
+        if (book == null)
+        {
+            return NotFound();
+        }
+        
+        var viewModel = new BookDetailsViewModel
+        {
+            Id = book.Id,
+            Title = book.Title,
+            AuthorId = book.AuthorId,
+            Genre = book.Genre,
+            PublishDate = book.PublishDate,
+            Isbn = book.Isbn,
+            CopiesAvailable = book.CopiesAvailable
+        };
+        
+        return View(viewModel);
+    }
 }
