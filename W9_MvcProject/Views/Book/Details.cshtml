@@ -15,7 +15,10 @@
         <li><strong>ISBN:</strong> @Model.Isbn</li>
         <li><strong>Copies Available:</strong> @Model.CopiesAvailable</li>
     </ul>
-    <a class="btn btn-sm btn-primary btn-edit" asp-controller="Book" asp-action="Edit" asp-route-id="@Model.Id">Edit Book</a>
+    <div style="display: flex; gap: 10px;">
+        <a class="btn btn-sm btn-primary btn-edit" asp-controller="Book" asp-action="Edit" asp-route-id="@Model.Id">Edit Book</a>
+        <a asp-controller="Book" asp-action="List" class="btn btn-sm btn-secondary btn-edit">Cancel</a>
+    </div>
 </div>
 
 <style>
