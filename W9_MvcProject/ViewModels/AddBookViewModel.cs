@@ -2,7 +2,7 @@
 
 namespace W9_MvcProject.Models;
 
-public class AddBookViewModel
+public class AddBookViewModel : Book
 {   
     [Display(Name = "Book Title")]
     [Required(ErrorMessage = "Title is required")]
