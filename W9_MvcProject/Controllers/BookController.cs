@@ -100,4 +100,9 @@ public class BookController : Controller
         
         return View(viewModel);
     }
+    
+    public IActionResult List()
+    {
+        return View();
+    }
 }
