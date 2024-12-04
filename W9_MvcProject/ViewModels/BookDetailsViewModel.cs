@@ -33,4 +33,6 @@ public class BookDetailsViewModel : Book
     [Required(ErrorMessage = "The number of available copies is required")]
     [Range(0, 10, ErrorMessage = "The number of available copies must be between 0 and 10")]
     public int? CopiesAvailable { get; set; }
+
+    public string GetDateString() => PublishDate?.ToString("dd-MM-yyyy");
 }
