@@ -1,4 +1,6 @@
-﻿namespace W9_MvcProject.Models;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+
+namespace W9_MvcProject.Models;
 
 public static class Data
 {
@@ -81,4 +83,7 @@ public static class Data
         new Book { Id = 49, Title = "Echoes of a Distant Past", AuthorId = 13, Genre = "Fantasy", PublishDate = DateTime.Parse("17/05/2008"), Isbn = "978-0-14-119234-4", CopiesAvailable = 8 },
         new Book { Id = 50, Title = "Across the Universe", AuthorId = 14, Genre = "Science Fiction", PublishDate = DateTime.Parse("06/06/2015"), Isbn = "978-1-44-222900-1", CopiesAvailable = 7 }
     };
+    
+    public static List<SelectListItem> GetAuthors() => Authors
+        .Select(a => new SelectListItem(a.GetFullName(), a.Id.ToString())).ToList();
 }
