@@ -137,7 +137,7 @@ public class BookController : Controller
         if (book != null)
         {
             Data.Books.Remove(book);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("List", "Book");
         }
         
         return View();
