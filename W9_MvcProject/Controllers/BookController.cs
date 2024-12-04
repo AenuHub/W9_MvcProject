@@ -71,7 +71,7 @@ public class BookController : Controller
                 existingBook.Isbn = book.Isbn;
                 existingBook.CopiesAvailable = book.CopiesAvailable.Value;
                 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("List", "Book");
             }
         }
         
