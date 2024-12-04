@@ -27,4 +27,102 @@ public class AuthorController : Controller
         
         return View();
     }
+    
+    public IActionResult List()
+    {
+        return View();
+    }
+    
+    public IActionResult Edit(int id)
+    {
+        var author = Data.Authors.FirstOrDefault(a => a.Id == id);
+        
+        if (author == null)
+        {
+            return NotFound();
+        }
+        
+        var viewModel = new AuthorDetailsViewModel
+        {
+            Id = author.Id,
+            FirstName = author.FirstName,
+            LastName = author.LastName,
+            DateOfBirth = author.DateOfBirth
+        };
+        
+        return View(viewModel);
+    }
+    
+    [HttpPost]
+    public IActionResult Edit(AuthorDetailsViewModel author)
+    {
+        if (ModelState.IsValid)
+        {
+            var existingAuthor = Data.Authors.FirstOrDefault(a => a.Id == author.Id);
+            
+            if (existingAuthor != null)
+            {
+                existingAuthor.FirstName = author.FirstName;
+                existingAuthor.LastName = author.LastName;
+                existingAuthor.DateOfBirth = author.DateOfBirth.Value;
+            }
+            
+            return RedirectToAction("List", "Author");
+        }
+        
+        return View();
+    }
+    
+    public IActionResult Details(int id)
+    {
+        var author = Data.Authors.FirstOrDefault(a => a.Id == id);
+        
+        if (author == null)
+        {
+            return NotFound();
+        }
+        
+        var viewModel = new AuthorDetailsViewModel
+        {
+            Id = author.Id,
+            FirstName = author.FirstName,
+            LastName = author.LastName,
+            DateOfBirth = author.DateOfBirth
+        };
+        
+        return View(viewModel);
+    }
+    
+    public IActionResult DeleteConfirm(int id)
+    {
+        var author = Data.Authors.FirstOrDefault(a => a.Id == id);
+        
+        if (author == null)
+        {
+            return NotFound();
+        }
+        
+        var viewModel = new AuthorDetailsViewModel
+        {
+            Id = author.Id,
+            FirstName = author.FirstName,
+            LastName = author.LastName,
+            DateOfBirth = author.DateOfBirth
+        };
+        
+        return View(viewModel);
+    }
+    
+    [HttpPost]
+    public IActionResult Delete(int id)
+    {
+        var author = Data.Authors.FirstOrDefault(a => a.Id == id);
+        
+        if (author != null)
+        {
+            Data.Authors.Remove(author);
+        }
+        
+        return RedirectToAction("List", "Author");
+    }
 }
