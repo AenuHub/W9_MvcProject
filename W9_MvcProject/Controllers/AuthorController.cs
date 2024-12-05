@@ -19,10 +19,13 @@ public class AuthorController : Controller
                 {
                     Id = Data.Authors.Max(a => a.Id) + 1,
                     FirstName = model.FirstName,
-                    LastName = model.LastName
+                    LastName = model.LastName,
+                    DateOfBirth = model.DateOfBirth.Value
                 }
             );
-            return RedirectToAction("Index", "Home");
+            
+            TempData["Message"] = "Author added successfully!";
+            return RedirectToAction("List", "Author");
         }
         
         return View();
@@ -67,6 +70,7 @@ public class AuthorController : Controller
                 existingAuthor.DateOfBirth = author.DateOfBirth.Value;
             }
             
+            TempData["Message"] = "Author updated successfully!";
             return RedirectToAction("List", "Author");
         }
         
@@ -129,6 +133,7 @@ public class AuthorController : Controller
             Data.Authors.Remove(author);
         }
         
+        TempData["DeleteMessage"] = $"Author: '{author.GetFullName()}' deleted successfully!";
         return RedirectToAction("List", "Author");
     }
 }
