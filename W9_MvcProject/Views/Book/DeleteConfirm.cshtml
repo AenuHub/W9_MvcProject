@@ -14,7 +14,8 @@
         <li><strong>ISBN:</strong> @Model.Isbn</li>
         <li><strong>Copies Available:</strong> @Model.CopiesAvailable</li>
     </ul>
-    <p class="text-danger">Are you sure to delete this book from repository?</p>
+    <p class="text-danger text-center">Are you sure to delete this book from repository?<br/>
+        <strong>This action cannot be undone!</strong></p>
     <form asp-controller="Book" asp-action="Delete" method="post" style="display: flex;">
         <input type="hidden" name="Id" value="@Model.Id" />
         <button type="submit" class="btn btn-sm btn-danger btn-edit">Delete Book</button>
