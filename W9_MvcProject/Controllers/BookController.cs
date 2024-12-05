@@ -26,7 +26,8 @@ public class BookController : Controller
                         CopiesAvailable = book.CopiesAvailable.Value
                     }
                 );
-            return RedirectToAction("Index", "Home");
+            TempData["Message"] = "Book added successfully!";
+            return RedirectToAction("List", "Book");
         }
         
         return View();
@@ -71,6 +72,7 @@ public class BookController : Controller
                 existingBook.Isbn = book.Isbn;
                 existingBook.CopiesAvailable = book.CopiesAvailable.Value;
                 
+                TempData["Message"] = "Book updated successfully!";
                 return RedirectToAction("List", "Book");
             }
         }
@@ -137,6 +139,7 @@ public class BookController : Controller
         if (book != null)
         {
             Data.Books.Remove(book);
+            TempData["DeleteMessage"] = $"Book: '{book.Title}' deleted successfully!";
             return RedirectToAction("List", "Book");
         }
         
