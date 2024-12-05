@@ -1,7 +1,7 @@
 
 ## W9_MvcProject - Patika+ Back-End Bootcamp Week 9 Project
 
-**Project Name**: Library Management System  
+**Project Name**: Book Repository / Library Management System
 **Project Type**: ASP.NET Core MVC Application  
 
 ## About the Project
