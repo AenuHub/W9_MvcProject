@@ -119,7 +119,13 @@ public class AuthorController : Controller
         var author = Data.Authors.FirstOrDefault(a => a.Id == id);
         
         if (author != null)
-        {
+        {   
+            var books = Data.Books.Where(b => b.AuthorId == author.Id).ToList();
+            
+            foreach (var book in books)
+            {
+                Data.Books.Remove(book);
+            }
             Data.Authors.Remove(author);
         }
         
