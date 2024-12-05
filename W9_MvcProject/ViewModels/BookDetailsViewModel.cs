@@ -26,7 +26,7 @@ public class BookDetailsViewModel : Book
     
     [Display(Name = "ISBN")]
     [Required(ErrorMessage = "ISBN is required")]
-    [Length(17, 17, ErrorMessage = "ISBN must be 17 characters with hyphens")]
+    [Length(17, 17, ErrorMessage = "ISBN must be 17 characters with hyphens e.g. 978-3-16-148410-0")]
     public string Isbn { get; set; } = string.Empty;
     
     [Display(Name = "Copies Available")]
