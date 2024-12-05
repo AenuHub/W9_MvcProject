@@ -4,7 +4,7 @@
     ViewBag.Title = "Delete Author";
 }
 
-<h2 class="display-6 fw-medium text-center">Author Details</h2>
+<h2 class="display-6 fw-medium text-center">Delete Author</h2>
 
 <div style="display: flex; flex-direction: column;" class="info-box">
     <h2>Author:</h2>
@@ -20,7 +20,9 @@
             <li><strong>@book.Title</strong></li>
         }
     </ul>
-    <p class="text-danger">Are you sure to delete this author from repository?</p>
+
+    <p class="text-danger text-center">Are you sure to delete this author from repository?<br>
+        <strong>This action cannot be undone! It also deletes all books written by this author from repository!</strong></p>
     <form asp-controller="Author" asp-action="Delete" method="post" style="display: flex;">
         <input type="hidden" name="Id" value="@Model.Id" />
         <button type="submit" class="btn btn-sm btn-danger btn-edit">Delete Author</button>
