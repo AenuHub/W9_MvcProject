@@ -8,7 +8,7 @@
 <div style="display: flex; flex-direction: column;" class="info-box">
     <h2>Title: @Model.Title</h2>
     <ul>
-        <li><strong>Author:</strong> @Model.AuthorId</li>
+        <li><strong>Author:</strong> @Data.Authors.FirstOrDefault(a => a.Id == Model.AuthorId).GetFullName()</li>
         <li><strong>Genre:</strong> @Model.Genre</li>
         <li><strong>Publish Date:</strong> @Model.GetDateString()</li>
         <li><strong>ISBN:</strong> @Model.Isbn</li>
