@@ -75,27 +75,27 @@ Manages operations related to authors:
 
 ### Views  
 
-#### **Book Views**  
-- **List**: Page displaying the list of books with edit, details and delete button.  
-- **Details**: Page showing book details with edit and cancel button.  
-- **Create**: Form page to add a new book.  
-- **Edit**: Form page to edit existing books.
-- **DeleteConfirm**: Confirmation page to delete a book.
+#### **_Book Views_**  
+- `List`: Page displaying the list of books with edit, details and delete button.  
+- `Details`: Page showing book details with edit and cancel button.  
+- `Create`: Form page to add a new book.  
+- `Edit`: Form page to edit existing books.
+- `DeleteConfirm`: Confirmation page to delete a book.
 
-#### **Author Views**  
-- **List**: Page displaying the list of authors with edit, details and delete button.  
-- **Details**: Page showing author details with edit and cancel button.  
-- **Create**: Form page to add a new author.  
-- **Edit**: Form page to edit existing authors.
-- **DeleteConfirm**: Confirmation page to delete an author and his/her books.
+#### **_Author Views_**  
+- `List`: Page displaying the list of authors with edit, details and delete button.  
+- `Details`: Page showing author details with edit and cancel button.  
+- `Create`: Form page to add a new author.  
+- `Edit`: Form page to edit existing authors.
+- `DeleteConfirm`: Confirmation page to delete an author and his/her books.
 
 ---
 
 ### Layouts  
 
-- Included **Home** and **About** pages.  
-- Used **PartialView** for dynamic layouts.  
-- Included a **_FooterPartial** at the bottom of every page stating ownership rights.  
+- Included `Home` and `About` pages.  
+- Used `PartialView` for dynamic layouts.  
+- Included a `_FooterPartial` partial view at the bottom of every page stating ownership rights.  
 
 ---
 
